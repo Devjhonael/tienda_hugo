@@ -15,7 +15,7 @@ from controllers.home_controller import HomeController
 # cargar las variables de entorno
 load_dotenv()
 
-# instanciar la clase flask y agregar las variables de configuracion
+# instanciar la clase flask y agregar las variables de configuracion /// saco largo jhonatan saco 
 app=Flask(__name__)
 app.config.from_object(Config)
 
@@ -24,7 +24,7 @@ db.init_app(app)
 with app.app_context():
     db.create_all()
 ma.init_app(app)
-# migrate.init_app(app,db)
+# migrate.init_app(app,db)  
 # api.init_app(app)
 
 api=Api(app)
