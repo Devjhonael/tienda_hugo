@@ -15,15 +15,17 @@ from controllers.home_controller import HomeController
 # cargar las variables de entorno
 load_dotenv()
 
-# instanciar la clase flask y agregar las variables de configuracion /// saco largo jhonatan saco 
+# instanciar la clase flask y agregar las variables de configuracion
 app=Flask(__name__)
 app.config.from_object(Config)
+app.config['SQLALCHEMY_DATABASE_URI']="mysql://u472469844_est11:#Bd00011@srv1006.hstgr.io/u472469844_est11"
 
 # instanciar las extenciones
 db.init_app(app)
 with app.app_context():
     db.create_all()
 ma.init_app(app)
+
 # migrate.init_app(app,db)  
 # api.init_app(app)
 
